@@ -23,7 +23,7 @@ const Team = () => {
         <div className="container">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(300px, 100%), 1fr))',
             gap: '36px'
           }}>
             {TEAM_MEMBERS.map((member) => (
@@ -75,17 +75,7 @@ const Team = () => {
           </div>
 
           {/* Masterclass Training Banner */}
-          <div style={{
-            marginTop: '80px',
-            backgroundColor: 'var(--color-warm-ivory)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '54px 40px',
-            border: '1px solid var(--color-border-gold)',
-            display: 'grid',
-            gridTemplateColumns: '1.2fr 0.8fr',
-            gap: '40px',
-            alignItems: 'center'
-          }}>
+          <div className="academy-banner-card">
             <div>
               <span className="section-eyebrow">Excellence in Continuing Artistry</span>
               <h2 style={{ fontSize: '2.2rem', marginBottom: '14px' }}>The LuxeAura Academy Standard</h2>

@@ -204,7 +204,7 @@
 .nav-links-desktop {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: clamp(16px, 2vw, 28px);
   list-style: none;
 }
 
@@ -1399,12 +1399,69 @@
   transform: translateY(-4px);
 }
 
-/* Media query for mobile nav button */
+/* Media query for mobile nav button & responsive adjustments */
 @media (max-width: 1024px) {
-  .nav-links-desktop {
-    display: none;
+  .nav-links-desktop,
+  .desktop-only-btn {
+    display: none !important;
   }
   .mobile-menu-btn {
     display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-container {
+    height: 72px;
+  }
+  .brand-name {
+    font-size: 1.45rem;
+  }
+  .brand-tagline {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+  .btn-lg {
+    padding: 14px 22px;
+    font-size: 0.95rem;
+  }
+  .package-card {
+    padding: 32px 20px;
+  }
+  .service-card-image-wrapper {
+    height: 220px;
+  }
+  .service-card-body {
+    padding: 22px 18px 18px 18px;
+  }
+  .team-image-wrapper {
+    height: 290px;
+  }
+  .gallery-item {
+    height: 280px;
+  }
+  .faq-question-btn {
+    padding: 18px 18px;
+    font-size: 1.1rem;
+  }
+  .faq-answer {
+    padding: 0 18px 18px 18px;
+  }
+  .footer {
+    padding-top: 56px;
+  }
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .back-to-top-btn {
+    bottom: 18px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
   }
 }

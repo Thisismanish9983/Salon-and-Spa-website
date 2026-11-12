@@ -75,7 +75,8 @@
 .hero-stats {
   display: flex;
   align-items: center;
-  gap: 36px;
+  flex-wrap: wrap;
+  gap: 24px 36px;
   padding-top: 32px;
   border-top: 1px solid var(--color-border-subtle);
 }
@@ -133,6 +134,13 @@
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+@media (max-width: 992px) {
+  .hero-floating-badge {
+    bottom: 16px;
+    left: 16px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -349,7 +357,7 @@
 
 @media (max-width: 768px) {
   .promo-banner {
-    padding: 40px 24px;
+    padding: 36px 20px;
   }
 }
 
@@ -365,6 +373,7 @@
 @media (max-width: 860px) {
   .promo-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
     text-align: center;
   }
 }
@@ -379,7 +388,7 @@
 }
 
 .promo-title {
-  font-size: clamp(2rem, 3vw + 0.5rem, 2.75rem);
+  font-size: clamp(1.85rem, 3vw + 0.5rem, 2.75rem);
   color: var(--color-warm-ivory);
   margin-bottom: 16px;
 }
@@ -399,7 +408,8 @@
 
 .promo-actions {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 @media (max-width: 860px) {
@@ -412,13 +422,13 @@
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px dashed var(--color-champagne-gold);
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 28px 20px;
   text-align: center;
 }
 
 .promo-discount {
   font-family: var(--font-serif);
-  font-size: 3.5rem;
+  font-size: clamp(2.4rem, 6vw, 3.5rem);
   color: var(--color-champagne-gold);
   font-weight: 700;
   line-height: 1;
@@ -1072,6 +1082,58 @@
   border: 1px solid var(--color-border-subtle);
 }
 
+.contact-form-panel {
+  background-color: var(--color-warm-ivory);
+  padding: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.academy-banner-card {
+  margin-top: 80px;
+  background-color: var(--color-warm-ivory);
+  border-radius: var(--radius-lg);
+  padding: 54px 40px;
+  border: 1px solid var(--color-border-gold);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .academy-banner-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 36px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 28px 20px;
+  }
+  .confirmation-card {
+    padding: 28px 20px;
+  }
+  .booking-summary-card,
+  .service-sidebar-card {
+    padding: 24px 20px;
+    position: static;
+  }
+}
+
 .contact-item-box {
   display: flex;
   align-items: flex-start;
@@ -1130,4 +1192,62 @@
   font-weight: 600;
   line-height: 1;
   opacity: 0.7;
+}
+
+/* ====================================================
+   UNIVERSAL MULTI-DEVICE RESPONSIVE GUARDS
+   ==================================================== */
+.hero-grid > *,
+.about-split > *,
+.promo-grid > *,
+.service-details-layout > *,
+.booking-page-layout > *,
+.contact-split-grid > *,
+.academy-banner-card > * {
+  min-width: 0;
+}
+
+.addons-panel {
+  background-color: var(--color-warm-ivory);
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
+  border: 1px solid var(--color-border-gold);
+}
+
+.callout-panel {
+  margin-top: 64px;
+  text-align: center;
+  padding: 48px 36px;
+  background-color: var(--color-soft-beige);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 576px) {
+  .addons-panel {
+    padding: 32px 18px;
+  }
+  .callout-panel {
+    margin-top: 44px;
+    padding: 32px 18px;
+  }
+  .procedure-step-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 18px;
+  }
+  .booking-stepper {
+    margin-bottom: 28px;
+  }
+  .booking-stepper::before {
+    top: 16px;
+  }
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  .step-label {
+    font-size: 0.68rem;
+    text-align: center;
+  }
 }

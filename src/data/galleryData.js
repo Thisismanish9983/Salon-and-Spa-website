@@ -52,7 +52,7 @@ export const GALLERY_ITEMS = [
     title: 'Cryo-Globe Lymphatic Sculpt',
     category: 'skincare',
     categoryLabel: 'Facial & Skincare',
-    image: 'https://images.unsplash.com/photo-1512290900672-1f02a8eb6e55?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80',
     description: 'Cooling glass globe lymphatic drainage reducing puffiness and lifting facial contours.'
   },
   {

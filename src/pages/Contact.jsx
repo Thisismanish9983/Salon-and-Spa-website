@@ -138,12 +138,7 @@ const Contact = () => {
             </div>
 
             {/* Right: Interactive Contact Form */}
-            <div style={{
-              backgroundColor: 'var(--color-warm-ivory)',
-              padding: '44px',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--color-border-subtle)'
-            }}>
+            <div className="contact-form-panel">
               <span className="section-eyebrow">Direct Message</span>
               <h3 style={{ fontSize: '1.8rem', marginBottom: '12px' }}>Send a Message to Concierge</h3>
               <p style={{ color: 'var(--color-muted-text)', marginBottom: '28px', fontSize: '0.95rem' }}>
@@ -187,7 +182,7 @@ const Contact = () => {
                     {errors.name && <div className="form-error">{errors.name}</div>}
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                  <div className="form-row-2">
                     <div className="form-group">
                       <label className="form-label" htmlFor="contactEmail">Email Address *</label>
                       <input

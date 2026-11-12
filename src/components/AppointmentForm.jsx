@@ -309,7 +309,7 @@ const AppointmentForm = () => {
                 ))}
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '28px' }}>
+              <div className="form-row-2" style={{ marginTop: '28px' }}>
                 <div className="form-group">
                   <label className="form-label" htmlFor="bookingDate">
                     Preferred Date
@@ -382,7 +382,7 @@ const AppointmentForm = () => {
                 {errors.name && <div className="form-error">{errors.name}</div>}
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              <div className="form-row-2">
                 <div className="form-group">
                   <label className="form-label" htmlFor="emailAddress">Email Address *</label>
                   <input

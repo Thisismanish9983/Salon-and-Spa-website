@@ -32,7 +32,7 @@ const Pricing = () => {
         <div className="container">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
             gap: '32px',
             marginBottom: '72px'
           }}>
@@ -93,12 +93,7 @@ const Pricing = () => {
           </div>
 
           {/* Add-ons Menu */}
-          <div style={{
-            backgroundColor: 'var(--color-warm-ivory)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '56px 40px',
-            border: '1px solid var(--color-border-gold)'
-          }}>
+          <div className="addons-panel">
             <SectionHeader
               eyebrow="Bespoke Enhancements"
               title="Ritual Add-Ons & Boosters"
@@ -107,7 +102,7 @@ const Pricing = () => {
 
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
               gap: '24px'
             }}>
               {ADD_ONS.map((addon, index) => (
@@ -141,13 +136,7 @@ const Pricing = () => {
           </div>
 
           {/* Bridal & Private Events Consultation */}
-          <div style={{
-            marginTop: '64px',
-            textAlign: 'center',
-            padding: '48px',
-            backgroundColor: 'var(--color-soft-beige)',
-            borderRadius: 'var(--radius-md)'
-          }}>
+          <div className="callout-panel">
             <h3 style={{ fontSize: '2rem', marginBottom: '12px' }}>Planning a Bridal Party or Private Sanctuary Buyout?</h3>
             <p style={{ maxWidth: '640px', margin: '0 auto 28px auto', color: 'var(--color-muted-text)' }}>
               Our private suite accommodates bridal parties, anniversary gatherings, and corporate retreats with bespoke champagne service, artisanal catering, and dedicated master stylists.
