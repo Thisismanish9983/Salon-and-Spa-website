@@ -12,7 +12,6 @@ import ServiceDetails from './pages/ServiceDetails';
 import Team from './pages/Team';
 import Pricing from './pages/Pricing';
 import Gallery from './pages/Gallery';
-import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -33,7 +32,6 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

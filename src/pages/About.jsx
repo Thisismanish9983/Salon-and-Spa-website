@@ -70,7 +70,7 @@ const About = () => {
                 </span>
               </div>
 
-              <Button to="/booking" variant="primary" icon={Calendar}>
+              <Button to="/contact" variant="primary" icon={Calendar}>
                 Reserve Your Experience
               </Button>
             </div>
@@ -168,7 +168,7 @@ const About = () => {
             Whether you desire a subtle balayage gloss or a full-day royal spa package, we invite you to experience the LuxeAura sanctuary difference.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-            <Button to="/booking" variant="primary" size="lg" icon={Calendar}>
+            <Button to="/contact" variant="primary" size="lg" icon={Calendar}>
               Reserve an Appointment
             </Button>
             <Button to="/team" variant="outline" size="lg">

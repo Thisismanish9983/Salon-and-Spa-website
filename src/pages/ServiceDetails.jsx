@@ -190,7 +190,7 @@ const ServiceDetails = () => {
                 </ul>
 
                 <Button
-                  to={`/booking?service=${service.id}`}
+                  to="/contact"
                   variant="primary"
                   style={{ width: '100%', marginBottom: '14px' }}
                   icon={Calendar}

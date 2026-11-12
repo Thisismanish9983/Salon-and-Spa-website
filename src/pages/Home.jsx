@@ -51,7 +51,7 @@ const Home = () => {
               </p>
 
               <div className="hero-cta-group">
-                <Button to="/booking" variant="primary" size="lg" icon={Calendar}>
+                <Button to="/contact" variant="primary" size="lg" icon={Calendar}>
                   Book Appointment
                 </Button>
                 <Button to="/services" variant="outline" size="lg" icon={ArrowRight}>
@@ -310,7 +310,7 @@ const Home = () => {
 
                 <div className="package-cta">
                   <Button
-                    to={`/booking?package=${pkg.id}`}
+                    to="/contact"
                     variant={pkg.featured ? 'primary' : 'secondary'}
                     style={{ width: '100%' }}
                     icon={Calendar}
@@ -389,7 +389,7 @@ const Home = () => {
                   Experience our bespoke hair artistry, facial treatments, or body rituals. Enjoy a 20% privilege on your first reservation.
                 </p>
                 <div className="promo-actions">
-                  <Button to="/booking" variant="primary" size="lg" icon={Calendar}>
+                  <Button to="/contact" variant="primary" size="lg" icon={Calendar}>
                     Book Your Appointment
                   </Button>
                   <Button to="/services" variant="outline-white" size="lg">
@@ -468,7 +468,7 @@ const Home = () => {
             Allow our team to craft your personalized sensory escape. Appointments are limited to preserve privacy and personalized tranquility.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            <Button to="/booking" variant="primary" size="lg" icon={Calendar}>
+            <Button to="/contact" variant="primary" size="lg" icon={Calendar}>
               Reserve an Appointment
             </Button>
             <Button to="/contact" variant="outline-white" size="lg">

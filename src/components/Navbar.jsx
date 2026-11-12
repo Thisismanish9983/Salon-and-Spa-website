@@ -153,7 +153,7 @@ const Navbar = () => {
           {/* Right Action Button */}
           <div className="nav-actions">
             <Button
-              to="/booking"
+              to="/contact"
               variant="primary"
               size="sm"
               icon={Calendar}
@@ -218,7 +218,7 @@ const Navbar = () => {
 
         <div className="mobile-nav-footer">
           <Button
-            to="/booking"
+            to="/contact"
             variant="primary"
             icon={Calendar}
             onClick={() => setMobileMenuOpen(false)}

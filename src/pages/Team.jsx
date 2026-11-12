@@ -61,7 +61,7 @@ const Team = () => {
                   </div>
 
                   <Button
-                    to={`/booking?staff=${member.id}`}
+                    to="/contact"
                     variant="outline"
                     size="sm"
                     style={{ width: '100%' }}

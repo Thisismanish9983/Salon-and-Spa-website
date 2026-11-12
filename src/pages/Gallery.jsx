@@ -99,7 +99,7 @@ const Gallery = () => {
             <p style={{ color: 'var(--color-muted-text)', maxWidth: '580px', margin: '0 auto 28px auto' }}>
               Bring your dream aesthetic to life. Schedule an in-person diagnostic consultation with one of our master artisans today.
             </p>
-            <Button to="/booking" variant="primary" size="lg" icon={Calendar}>
+            <Button to="/contact" variant="primary" size="lg" icon={Calendar}>
               Reserve Your Consultation
             </Button>
           </div>

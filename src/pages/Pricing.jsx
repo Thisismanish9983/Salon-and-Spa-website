@@ -80,7 +80,7 @@ const Pricing = () => {
 
                 <div className="package-cta">
                   <Button
-                    to={`/booking?package=${pkg.id}`}
+                    to="/contact"
                     variant={pkg.featured ? 'primary' : 'secondary'}
                     style={{ width: '100%' }}
                     icon={Calendar}

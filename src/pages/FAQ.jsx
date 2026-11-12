@@ -132,7 +132,7 @@ const FAQ = () => {
               <Button to="/contact" variant="primary">
                 Contact Concierge Desk
               </Button>
-              <Button to="/booking" variant="outline" icon={Calendar}>
+              <Button to="/contact" variant="outline" icon={Calendar}>
                 Book an Appointment
               </Button>
             </div>

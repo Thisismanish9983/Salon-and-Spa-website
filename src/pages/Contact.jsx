@@ -18,7 +18,8 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    subject: 'General Inquiry',
+    address: '',
+    subject: 'Appointment Request',
     message: ''
   });
 
@@ -30,11 +31,18 @@ const Contact = () => {
     const errs = {};
     if (!formData.name.trim()) errs.name = 'Full name is required';
     if (!formData.email.trim()) {
-      errs.email = 'Email address is required';
+      errs.email = 'Gmail / Email address is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errs.email = 'Please provide a valid email';
+      errs.email = 'Please provide a valid email address';
     }
-    if (!formData.message.trim()) errs.message = 'Please provide your message';
+    if (!formData.phone.trim()) {
+      errs.phone = 'Phone number is required';
+    } else if (formData.phone.trim().length < 8) {
+      errs.phone = 'Please provide a valid phone number';
+    }
+    if (!formData.address.trim()) {
+      errs.address = 'Address is required';
+    }
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -51,7 +59,8 @@ const Contact = () => {
         name: '',
         email: '',
         phone: '',
-        subject: 'General Inquiry',
+        address: '',
+        subject: 'Appointment Request',
         message: ''
       });
     }, 700);
@@ -184,12 +193,12 @@ const Contact = () => {
 
                   <div className="form-row-2">
                     <div className="form-group">
-                      <label className="form-label" htmlFor="contactEmail">Email Address *</label>
+                      <label className="form-label" htmlFor="contactEmail">Gmail / Email Address *</label>
                       <input
                         id="contactEmail"
                         type="email"
                         className="form-control"
-                        placeholder="name@email.com"
+                        placeholder="name@gmail.com"
                         value={formData.email}
                         onChange={(e) => {
                           setFormData({ ...formData, email: e.target.value });
@@ -200,48 +209,65 @@ const Contact = () => {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label" htmlFor="contactPhone">Phone Number</label>
+                      <label className="form-label" htmlFor="contactPhone">Phone Number *</label>
                       <input
                         id="contactPhone"
                         type="tel"
                         className="form-control"
                         placeholder="+1 (310) 555-0194"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) => {
+                          setFormData({ ...formData, phone: e.target.value });
+                          if (errors.phone) setErrors({ ...errors, phone: null });
+                        }}
                       />
+                      {errors.phone && <div className="form-error">{errors.phone}</div>}
                     </div>
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label" htmlFor="subject">Topic of Interest</label>
+                    <label className="form-label" htmlFor="contactAddress">Address *</label>
+                    <input
+                      id="contactAddress"
+                      type="text"
+                      className="form-control"
+                      placeholder="Your Street Address, City"
+                      value={formData.address}
+                      onChange={(e) => {
+                        setFormData({ ...formData, address: e.target.value });
+                        if (errors.address) setErrors({ ...errors, address: null });
+                      }}
+                    />
+                    {errors.address && <div className="form-error">{errors.address}</div>}
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="subject">Service / Topic of Interest</label>
                     <select
                       id="subject"
                       className="form-control"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     >
-                      <option value="General Inquiry">General Sanctuary Inquiry</option>
-                      <option value="Bridal Booking">Bespoke Bridal Couture Services</option>
-                      <option value="Private Buyout">Private Event or Spa Buyout</option>
-                      <option value="Press / Media">Press & Editorial Partnerships</option>
-                      <option value="Careers">Artisan Career Opportunities</option>
+                      <option value="Appointment Request">Book Appointment</option>
+                      <option value="Hair Styling & Coloring">Hair Styling & Coloring</option>
+                      <option value="Facial & Skin Care">Facial & Skin Care</option>
+                      <option value="Bridal Couture">Bridal Couture Services</option>
+                      <option value="Spa & Massage">Luxury Spa & Body Massage</option>
+                      <option value="General Inquiry">General Inquiry</option>
                     </select>
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label" htmlFor="contactMsg">Message / Specific Desires *</label>
+                    <label className="form-label" htmlFor="contactMsg">Message / Preferred Date & Time (Optional)</label>
                     <textarea
                       id="contactMsg"
-                      rows={5}
+                      rows={4}
                       className="form-control"
-                      placeholder="Tell us about the desired treatment, preferred dates, or special event details..."
+                      placeholder="Share your preferred service, date, or any special requests..."
                       value={formData.message}
-                      onChange={(e) => {
-                        setFormData({ ...formData, message: e.target.value });
-                        if (errors.message) setErrors({ ...errors, message: null });
-                      }}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
-                    {errors.message && <div className="form-error">{errors.message}</div>}
                   </div>
 
                   <Button
